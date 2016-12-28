@@ -16,7 +16,10 @@
 日志配置项在logger.conf文件中
 
 ## 请求时序图
+
 ```sequence
+
+Title:test
 participant ClickSenderManager
 participant SenderThread
 participant FillThread
@@ -40,5 +43,6 @@ SenderThread->广告主:激活数据发送至广告主(send)
 Note over SenderThread:核对广告主response
 SenderThread->MySql:更改clk id 状态
 MonitorThread->MySql:检查当天内未处理的clk数量
+
 ```
 
