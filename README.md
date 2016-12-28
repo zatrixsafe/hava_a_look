@@ -1,9 +1,4 @@
 
 ```sequence
-participant ClickSenderManager
-participant SenderThread
-participant FillThread
-participant Queue
-participant MySql
-participant MonitorThread
+ClickSenderManager->Queue:实例一个全局Queue
 ```
