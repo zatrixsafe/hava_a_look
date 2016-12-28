@@ -1,24 +1,5 @@
-# iow_clksender
-## 说明
-1.bin目录下是控制iow_clksender开始和停止的运行脚本
-可运行bash iow_clksender.sh start 启动程序
-运行bash iow_clksender.sh stop 停止程序
-2.config目录下是clicksender模块的配置文件
-3.lib存放的是项目文件
-4.iow_clksender目录下为项目的主要程序脚本
-
-添加新的广告主时:
-1.在MIS的创意层添加对广告主的AppId的sendUrl进行配置
-3.在添加sendUrl时，应按照appId=<APPID>的格式添加参数
-
-
-日志文件位于logs目录下的clicksender.log文件中
-日志配置项在logger.conf文件中
-
-## 请求时序图
 
 ```sequence
-
 Title:test
 participant ClickSenderManager
 participant SenderThread
@@ -43,6 +24,4 @@ SenderThread->广告主:激活数据发送至广告主(send)
 Note over SenderThread:核对广告主response
 SenderThread->MySql:更改clk id 状态
 MonitorThread->MySql:检查当天内未处理的clk数量
-
 ```
-
